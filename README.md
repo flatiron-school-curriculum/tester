@@ -17,6 +17,8 @@
 
 This will build a form that looks like this:
 
+## Stop
+
 ```html
 <form accept-charset="UTF-8" action="/cats" method="POST">
   <label for="cat_name">Name</label>
@@ -26,4 +28,4 @@ This will build a form that looks like this:
   <input name="commit" type="submit" value="Create Cat">
 </form>
 ```
-## Stop
+
