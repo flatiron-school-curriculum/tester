@@ -16,7 +16,7 @@
 
 This will build a form that looks like this:
 
-```html
+```
 <form accept-charset="UTF-8" action="/cats" method="POST">
   <label for="cat_name">Name</label>
   <input id="cat_name" name="cat[name]" type="text">
