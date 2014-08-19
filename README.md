@@ -1,31 +1,23 @@
 # Tester
 
+## Other Form Elements
 
-## Form_tag
+### collection_check_boxes
+- It assumes that there is a many-to-many relationship in place (books have many authors, authors have many books)
 
-### collection_select
-- In this case, this form assumes that there is a one-to-many relationship in place (movie has one director, director has many movies)
+```ruby
+<%= form_for(@book) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-```
-<%= form_for(@movie) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.collection_select :director_id, Director.all, :id, :name %>
+  <%= f.collection_check_boxes :author_ids, Author.all, :id, :name %>
 
   <%= f.submit %>
 <% end %>
 ```
 
-## Stop
-
-```html
-<form accept-charset="UTF-8" action="/cats" method="POST">
-  <label for="cat_name">Name</label>
-  <input id="cat_name" name="cat[name]" type="text">
-  <label for="cat_color">Color</label>
-  <input id="cat_color" name="cat[color]" type="text">
-  <input name="commit" type="submit" value="Create Cat">
-</form>
-```
-
+- This form has a `collection_check_boxes` field, and there are several parameters passed in:
+  - The first parameter of the method is `:author_ids`: this is a collection of all of the `:author_id`s that will be passed in if the corresponding checkbox is checked
+  - The second parameter is `Author.all`: this is collection of all of the possible check box options that will be available in the form
+  - The third parameter is `:id`: this is the parameter of an author that will be passed into the `:author_ids` collection once a checkbox is checked
+  - The final parameter is `:name`: this is the attribute of author that will be rendered on the page next to the checkbox
