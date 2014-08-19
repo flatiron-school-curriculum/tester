@@ -3,19 +3,19 @@
 
 ## Form_tag
 
+### collection_select
+- In this case, this form assumes that there is a one-to-many relationship in place (movie has one director, director has many movies)
+
 ```
-<%= form_tag("/cats") do %>
-  <%= label_tag('cat[name]', "Name") %>
-  <%= text_field_tag('cat[name]') %>
+<%= form_for(@movie) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-  <%= label_tag('cat[color]', "Color") %>
-  <%= text_field_tag('cat[color]') %>
+  <%= f.collection_select :director_id, Director.all, :id, :name %>
 
-  <% submit_tag "Create Cat" %>
+  <%= f.submit %>
 <% end %>
 ```
-
-This will build a form that looks like this:
 
 ## Stop
 
