@@ -2,6 +2,11 @@
 
 ## Other Form Elements
 
+### accepts_nested_attributes_for  
+- this goes into the model
+- Allows you to implicitly create nested attributes for object associations
+- closely tied in with the `fields_for` concept
+
 ### collection_check_boxes
 - It assumes that there is a many-to-many relationship in place (books have many authors, authors have many books)
 
