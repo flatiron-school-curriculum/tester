@@ -1,28 +1,35 @@
-# Tester
+---
+  tags: hashes, iteration
+  languages: ruby
+  resources: 1
+---
 
-### accepts_nested_attributes_for  
-- this goes into the model
-- Allows you to implicitly create nested attributes for object associations
-- closely tied in with the `fields_for` concept
+# Hashketball
 
-## Other Form Elements
+## Skills: Hashes and Iteration
 
-### collection_check_boxes
-- It assumes that there is a many-to-many relationship in place (books have many authors, authors have many books)
+* Away Team = Charlotte Hornets, Colors = Turquoise, Purple
 
-```ruby
-<%= form_for(@book) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+|                    | Jeff Adrien       | Bismak Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   |
+|:------------------:|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-----------------:|
+| **Team**           | Charlotte Hornets | Charlotte Hornets | Charlotte Hornets | Charlet Hornets | Charlotte Hornets |
+| **Number**         | 4                 | 0                 | 2                 | 8               | 33                |
+| **Shoe**           | 18                | 16                | 14                | 15              | 15                |
+| **Points**         | 10                | 12                | 24                | 33              | 6                 |
+| **Rebounds**       | 1                 | 4                 | 12                | 3               | 12                |
+| **Assists**        | 1                 | 7                 | 12                | 2               | 12                |
+| **Steals**         | 2                 | 7                 | 4                 | 1               | 22                |
+| **Blocks**         | 7                 | 15                | 5                 | 1               | 5                 |
+| **Slam Dunks**     | 2                 | 10                | 5                 | 0               | 12                |
 
-  <%= f.collection_check_boxes :author_ids, Author.all, :id, :name %>
-
-  <%= f.submit %>
-<% end %>
-```
-
-- This form has a `collection_check_boxes` field, and there are several parameters passed in:
-  - The first parameter of the method is `:author_ids`: this is a collection of all of the `:author_id`s that will be passed in if the corresponding checkbox is checked
-  - The second parameter is `Author.all`: this is collection of all of the possible check box options that will be available in the form
-  - The third parameter is `:id`: this is the parameter of an author that will be passed into the `:author_ids` collection once a checkbox is checked
-  - The final parameter is `:name`: this is the attribute of author that will be rendered on the page next to the checkbox
+|                    | Alan Anderson | Reggie Evans | Brook Lopez  | Mason Plumlee | Jason Terry   |
+|:------------------:|:-------------:|:------------:|:------------:|:-------------:|:-------------:|
+| **Team**           | Brooklyn Nets | Brooklyn Nets| Brooklyn Nets| Brooklyn Nets | Brooklyn Nets |
+| **Number**         | 0             | 30           | 11           | 1             | 31            |
+| **Shoe**           | 16            | 14           | 17           | 19            | 15            |
+| **Points**         | 22            | 12           | 17           | 26            | 19            |
+| **Rebounds**       | 12            | 12           | 19           | 12            | 2             |
+| **Assists**        | 12            | 12           | 10           | 6             | 2             |
+| **Steals**         | 3             | 12           | 3            | 3             | 4             |
+| **Blocks**         | 1             | 12           | 1            | 8             | 11            |
+| **Slam Dunks**     | 1             | 7            | 15           | 5             | 1             |
